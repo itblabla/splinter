@@ -534,6 +534,11 @@ class BaseWebDriver(DriverAPI):
             '//select[@name="%s"]//option[@value="%s"]' % (name, value)
         ).first._element.click()
 
+    def select_by_id(self, name, value):
+        self.find_by_xpath(
+            '//select[@id="%s"]//option[@value="%s"]' % (name, value)
+        ).first._element.click()
+
     def select_by_text(self, name, text):
         self.find_by_xpath(
             '//select[@name="%s"]/option[text()="%s"]' % (name, text)
